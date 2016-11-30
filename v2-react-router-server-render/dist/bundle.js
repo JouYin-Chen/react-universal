@@ -63,49 +63,14 @@
 
 	var _reactRouter = __webpack_require__(173);
 
+	var _routes = __webpack_require__(228);
+
+	var _routes2 = _interopRequireDefault(_routes);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	var NotFound = function NotFound() {
-	  return _react2.default.createElement(
-	    'div',
-	    null,
-	    '404 Not Found'
-	  );
-	};
 	//react-router
-
-	var Root = function Root() {
-	  return _react2.default.createElement(
-	    'h1',
-	    null,
-	    'Client Root'
-	  );
-	};
-	var A = function A() {
-	  return _react2.default.createElement(
-	    'h1',
-	    null,
-	    'Client A'
-	  );
-	};
-	var B = function B() {
-	  return _react2.default.createElement(
-	    'h2',
-	    null,
-	    'Client B'
-	  );
-	};
-
-	var routes = _react2.default.createElement(
-	  _reactRouter.Route,
-	  { path: '/' },
-	  _react2.default.createElement(_reactRouter.IndexRoute, { component: Root }),
-	  _react2.default.createElement(_reactRouter.Route, { path: '/A', component: A }),
-	  _react2.default.createElement(_reactRouter.Route, { path: '/B', component: B }),
-	  _react2.default.createElement(_reactRouter.Route, { path: '*', component: NotFound })
-	);
-
-	_reactDom2.default.render(_react2.default.createElement(_reactRouter.Router, { routes: routes, history: _reactRouter.browserHistory }), document.getElementById('app'));
+	_reactDom2.default.render(_react2.default.createElement(_reactRouter.Router, { routes: _routes2.default, history: _reactRouter.browserHistory }), document.getElementById('app'));
 
 /***/ },
 /* 2 */
@@ -26378,6 +26343,58 @@
 	  });
 	};
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)))
+
+/***/ },
+/* 228 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var _react = __webpack_require__(2);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactRouter = __webpack_require__(173);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var NotFound = function NotFound() {
+	   return _react2.default.createElement(
+	      'div',
+	      null,
+	      '404 Not Found'
+	   );
+	};
+	var Root = function Root() {
+	   return _react2.default.createElement(
+	      'h1',
+	      null,
+	      'Client Root'
+	   );
+	};
+	var A = function A() {
+	   return _react2.default.createElement(
+	      'h1',
+	      null,
+	      'Client A'
+	   );
+	};
+	var B = function B() {
+	   return _react2.default.createElement(
+	      'h2',
+	      null,
+	      'Client B'
+	   );
+	};
+
+	module.exports = _react2.default.createElement(
+	   _reactRouter.Route,
+	   { path: '/' },
+	   _react2.default.createElement(_reactRouter.IndexRoute, { component: Root }),
+	   _react2.default.createElement(_reactRouter.Route, { path: '/A', component: A }),
+	   _react2.default.createElement(_reactRouter.Route, { path: '/B', component: B }),
+	   _react2.default.createElement(_reactRouter.Route, { path: '*', component: NotFound })
+	);
 
 /***/ }
 /******/ ]);

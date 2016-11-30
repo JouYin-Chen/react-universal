@@ -34,7 +34,8 @@ module.exports = {
         test: /\.jsx?$/,
         include: [
           __dirname + "/app",
-        	__dirname + "/client"
+        	//__dirname + "/client",
+        	__dirname + "/modules"
         ],
         exclude: /node_modules/,
         loader: 'babel-loader',

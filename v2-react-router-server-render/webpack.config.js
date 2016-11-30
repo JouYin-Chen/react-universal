@@ -16,7 +16,7 @@ module.exports = {
         test: /\.jsx?$/,
         // 只包含`client`目錄
         include: [
-          //__dirname + "/app",
+          __dirname + "/modules",
           __dirname + "/client"
         ],
         exclude: /node_modules/,

@@ -81,11 +81,15 @@
 
 	var _reactRouter = __webpack_require__(10);
 
+	var _routes = __webpack_require__(11);
+
+	var _routes2 = _interopRequireDefault(_routes);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	var _marked = [authFail, serverRenderWithRouterMiddwware].map(_regenerator2.default.mark);
 
-	var route = __webpack_require__(11)();
+	var route = __webpack_require__(12)();
 
 	var app = new _koa2.default();
 
@@ -93,47 +97,6 @@
 
 	//react-router
 
-
-	/*
-	* React Component for Server Render
-	*/
-	var NotFound = function NotFound() {
-		return _react2.default.createElement(
-			'div',
-			null,
-			'404 Not Found'
-		);
-	};
-	var Root = function Root() {
-		return _react2.default.createElement(
-			'h1',
-			null,
-			'Client Root'
-		);
-	};
-	var A = function A() {
-		return _react2.default.createElement(
-			'h1',
-			null,
-			'Client A'
-		);
-	};
-	var B = function B() {
-		return _react2.default.createElement(
-			'h2',
-			null,
-			'Client B'
-		);
-	};
-
-	var routes = _react2.default.createElement(
-		_reactRouter.Route,
-		{ path: '/' },
-		_react2.default.createElement(_reactRouter.IndexRoute, { component: Root }),
-		_react2.default.createElement(_reactRouter.Route, { path: '/A', component: A }),
-		_react2.default.createElement(_reactRouter.Route, { path: '/B', component: B }),
-		_react2.default.createElement(_reactRouter.Route, { path: '*', component: NotFound })
-	);
 
 	function authFail(next) {
 		return _regenerator2.default.wrap(function authFail$(_context) {
@@ -187,7 +150,7 @@
 					case 2:
 						//console.warn(this)
 						(0, _reactRouter.match)({
-							routes: routes,
+							routes: _routes2.default,
 							location: this.request.url
 						}, function (error, redirectLocatin, renderProps) {
 							//const appHtml = renderToString(<RouterContext {...renderProps}/>)
@@ -264,6 +227,58 @@
 
 /***/ },
 /* 11 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var _react = __webpack_require__(7);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactRouter = __webpack_require__(10);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var NotFound = function NotFound() {
+	   return _react2.default.createElement(
+	      'div',
+	      null,
+	      '404 Not Found'
+	   );
+	};
+	var Root = function Root() {
+	   return _react2.default.createElement(
+	      'h1',
+	      null,
+	      'Client Root'
+	   );
+	};
+	var A = function A() {
+	   return _react2.default.createElement(
+	      'h1',
+	      null,
+	      'Client A'
+	   );
+	};
+	var B = function B() {
+	   return _react2.default.createElement(
+	      'h2',
+	      null,
+	      'Client B'
+	   );
+	};
+
+	module.exports = _react2.default.createElement(
+	   _reactRouter.Route,
+	   { path: '/' },
+	   _react2.default.createElement(_reactRouter.IndexRoute, { component: Root }),
+	   _react2.default.createElement(_reactRouter.Route, { path: '/A', component: A }),
+	   _react2.default.createElement(_reactRouter.Route, { path: '/B', component: B }),
+	   _react2.default.createElement(_reactRouter.Route, { path: '*', component: NotFound })
+	);
+
+/***/ },
+/* 12 */
 /***/ function(module, exports) {
 
 	module.exports = require("koa-router");

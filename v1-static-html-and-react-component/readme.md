@@ -13,14 +13,14 @@ babel-node ./app/app.js
   
   
 #babel react  
-##You get babel-node by installing babel-cli  
+You get babel-node by installing babel-cli  
   
 ##Install  
 ```  
 npm install -g babel-cli  
 ```  
 
-##let babel know react  
+let babel know react  
   
 ###create new file :  
 ```
